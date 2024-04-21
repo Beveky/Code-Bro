@@ -16,7 +16,7 @@ export default function checkout() {
     process.env.NEXT_PUBLIC_STRIPE_PUBLISHER_KEY
   );
   return (
-    <Suspense fallback={<div>Loading...</div>}>
+    <Suspense>
       <Elements stripe={stripePromise} options={options}>
         <CheckoutForm amount={Number(searchParams.get("amount"))} />
       </Elements>

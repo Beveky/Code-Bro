@@ -5,8 +5,9 @@ import { loadStripe } from "@stripe/stripe-js";
 import CheckoutForm from "./_components/CheckoutForm";
 import { useSearchParams } from "next/navigation";
 
-export default function checkout() {
-  const searchParams = useSearchParams();
+export default function Checkout() {
+  // Check if window is defined (client-side) before using useSearchParams
+  const searchParams = typeof window !== "undefined" ? useSearchParams() : {};
   const options = {
     mode: "payment",
     currency: "usd",
@@ -16,7 +17,7 @@ export default function checkout() {
     process.env.NEXT_PUBLIC_STRIPE_PUBLISHER_KEY
   );
   return (
-    <Suspense>
+    <Suspense fallback={<div>Loading...</div>}>
       <Elements stripe={stripePromise} options={options}>
         <CheckoutForm amount={Number(searchParams.get("amount"))} />
       </Elements>

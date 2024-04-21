@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { Suspense } from "react";
 import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
 import CheckoutForm from "./_components/CheckoutForm";
@@ -16,8 +16,10 @@ export default function checkout() {
     process.env.NEXT_PUBLIC_STRIPE_PUBLISHER_KEY
   );
   return (
-    <Elements stripe={stripePromise} options={options}>
-      <CheckoutForm amount={Number(searchParams.get("amount"))} />
-    </Elements>
+    <Suspense fallback={<div>Loading...</div>}>
+      <Elements stripe={stripePromise} options={options}>
+        <CheckoutForm amount={Number(searchParams.get("amount"))} />
+      </Elements>
+    </Suspense>
   );
 }

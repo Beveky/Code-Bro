@@ -1,30 +1,23 @@
 'use client'
 
 import { SignIn } from "@clerk/nextjs";
-import type { AppProps } from "next/app";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-export default function Page({ pageProps }: AppProps) {
+export default function Page() {
 
   const imageUrls = [
     '/LoginPic.png',
     '/LoginPic2.png',
     '/LoginPic3.png',
   ];
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const getRandomIndex = () => Math.floor(Math.random() * imageUrls.length);
+  const [currentIndex, setCurrentIndex] = useState(getRandomIndex());
 
   useEffect(() => {
-    // Get the current index from local storage or default to 0
-    const storedIndex = localStorage.getItem('currentIndex');
-    const index = storedIndex ? parseInt(storedIndex, 10) : 0;
-    setCurrentIndex(index);
-
-    // Increment the index for the next image
-    const nextIndex = (index + 1) % imageUrls.length;
-
-    // Store the next index in local storage
-    localStorage.setItem('currentIndex', nextIndex.toString());
+    
+    setCurrentIndex(getRandomIndex());
   }, []);
+
 
   return (
     <section className="custom-gradient">
@@ -85,9 +78,8 @@ export default function Page({ pageProps }: AppProps) {
               Welcome to CO<span className="text-hover">D</span>E-BRO
               </h1>
 
-              <p className="mt-4 leading-relaxed text-black-500">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                Eligendi nam dolorum aliquam, quibusdam aperiam voluptatum.
+              <p className="mt-4 leading-relaxed text-black-500 text-white">
+              Don't waste any more precious time being apart from code-bro. With time being of the essence, it's imperative that we act promptly. So, twirl your mustache in readiness, and let's get started!
               </p>
               <p className="opacity-0">opacity0</p>
             </div>

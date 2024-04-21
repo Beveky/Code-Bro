@@ -1,44 +1,36 @@
 'use client'
 
 import { SignUp } from "@clerk/nextjs";
-import type { AppProps } from "next/app";
 import Image from "next/image";
-import { useEffect } from "react";
-export default function Page({ pageProps }: AppProps) {
+import { useEffect, useState } from "react";
+export default function Page() {
 
   const imageUrls = [
     '/LoginPic.png',
     '/LoginPic2.png',
     '/LoginPic3.png',
   ];
+  const getRandomIndex = () => Math.floor(Math.random() * imageUrls.length);
+  const [currentIndex, setCurrentIndex] = useState(getRandomIndex());
+
   useEffect(() => {
-    // Get the current index from local storage or default to 0
-    let currentIndex = localStorage.getItem('currentIndex');
-  currentIndex? parseInt(currentIndex as string, 10) : 0;
+  
+    setCurrentIndex(getRandomIndex());
+  }, []);
 
-    // Increment the index for the next image
-    const nextIndex = ((parseInt(currentIndex) + 1) % imageUrls.length);
-
-    // Store the next index in local storage
-    localStorage.setItem('currentIndex', nextIndex.toString());
-  }, [imageUrls.length]);
-
-  // Get the current index from local storage or default to 0
-  let currentIndex = localStorage.getItem('currentIndex');
-  currentIndex? parseInt(currentIndex as string, 10) : 0;
 
   return (
-    <section className="custom-gradient">
+<section className="custom-gradient">
       
       <div className="lg:grid lg:min-h-screen lg:grid-cols-12">
         <section className="relative flex h-32 items-end bg-gray-900 lg:col-span-5 lg:h-full xl:col-span-6">
       
-          <img
+        <img
             alt="LoginPic"
             src={imageUrls[currentIndex]}
+          
             className="absolute inset-0 h-full w-full object-cover opacity-80"
           />
-
           <div className="hidden lg:relative lg:block lg:p-12">
             <a className="block text-white" href="#">
               <span className="sr-only">Home</span>
@@ -86,14 +78,13 @@ export default function Page({ pageProps }: AppProps) {
               Welcome to CO<span className="text-hover">D</span>E-BRO
               </h1>
 
-              <p className="mt-4 leading-relaxed text-black-500">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                Eligendi nam dolorum aliquam, quibusdam aperiam voluptatum.
+              <p className="mt-4 leading-relaxed text-black-500 text-white">
+              Don't waste any more precious time being apart from code-bro. With time being of the essence, it's imperative that we act promptly. So, twirl your mustache in readiness, and let's get started!
               </p>
               <p className="opacity-0">opacity0</p>
             </div>
 
-            <SignUp 
+            <SignUp
               appearance={{
                 elements: {
                   formButtonPrimary:

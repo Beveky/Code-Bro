@@ -5,9 +5,8 @@ import { loadStripe } from "@stripe/stripe-js";
 import CheckoutForm from "./_components/CheckoutForm";
 import { useSearchParams } from "next/navigation";
 
-export default function Checkout() {
-  // Check if window is defined (client-side) before using useSearchParams
-  const searchParams = typeof window !== "undefined" ? useSearchParams() : {};
+export default function checkout() {
+  const searchParams = useSearchParams();
   const options = {
     mode: "payment",
     currency: "usd",

@@ -13,7 +13,7 @@ export default function ProductBanner({ product }) {
           className="rounded-lg"
         />
       ) : (
-        <div className="w-[400px] h-[225px] bg-slate-200 rounded-lg animate-pulse "></div>
+        <div className=" bg-slate-200 rounded-lg animate-pulse w-[300px] h-[180px] sm:w-[400px] sm:h-[225px]"></div>
       )}
     </div>
   );

@@ -1,0 +1,174 @@
+[debug] [2024-04-22T00:32:38.917Z] ----------------------------------------------------------------------
+[debug] [2024-04-22T00:32:38.921Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Beveky\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2024-04-22T00:32:38.921Z] CLI Version:   13.7.3
+[debug] [2024-04-22T00:32:38.921Z] Platform:      win32
+[debug] [2024-04-22T00:32:38.921Z] Node Version:  v20.10.0
+[debug] [2024-04-22T00:32:38.922Z] Time:          Mon Apr 22 2024 01:32:38 GMT+0100 (heure normale d’Europe centrale)
+[debug] [2024-04-22T00:32:38.922Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-04-22T00:32:39.005Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-04-22T00:32:39.006Z] > authorizing via signed-in user (haythem.haddada@gmail.com)
+[debug] [2024-04-22T00:32:39.006Z] [iam] checking project code-bro-fd429 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2024-04-22T00:32:39.008Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/code-bro-fd429:testIamPermissions [none]
+[debug] [2024-04-22T00:32:39.008Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/code-bro-fd429:testIamPermissions x-goog-quota-user=projects/code-bro-fd429
+[debug] [2024-04-22T00:32:39.008Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/code-bro-fd429:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2024-04-22T00:32:39.566Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/code-bro-fd429:testIamPermissions 200
+[debug] [2024-04-22T00:32:39.566Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/code-bro-fd429:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2024-04-22T00:32:39.567Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/code-bro-fd429 [none]
+[debug] [2024-04-22T00:32:40.011Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/code-bro-fd429 200
+[debug] [2024-04-22T00:32:40.011Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/code-bro-fd429 {"projectId":"code-bro-fd429","projectNumber":"773406357843","displayName":"code-bro","name":"projects/code-bro-fd429","resources":{"hostingSite":"code-bro-fd429"},"state":"ACTIVE","etag":"1_f49fabc6-e5b4-4802-a47e-5531a42de95a"}
+[debug] [2024-04-22T00:32:44.840Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/code-bro-fd429/sites pageToken=&pageSize=10
+[debug] [2024-04-22T00:32:46.029Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/code-bro-fd429/sites 200
+[debug] [2024-04-22T00:32:46.029Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/code-bro-fd429/sites {"sites":[{"name":"projects/code-bro-fd429/sites/code-bro-fd429","defaultUrl":"https://code-bro-fd429.web.app","appId":"1:773406357843:web:a1674d4a657d073f9d49a6","type":"DEFAULT_SITE"}]}
+[debug] [2024-04-22T00:32:46.030Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:773406357843:web:a1674d4a657d073f9d49a6/config [none]
+[debug] [2024-04-22T00:32:46.849Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:773406357843:web:a1674d4a657d073f9d49a6/config 200
+[debug] [2024-04-22T00:32:46.849Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:773406357843:web:a1674d4a657d073f9d49a6/config {"projectId":"code-bro-fd429","appId":"1:773406357843:web:a1674d4a657d073f9d49a6","storageBucket":"code-bro-fd429.appspot.com","apiKey":"AIzaSyBQZWXe96plVC2k2xrZIYqBaolqyCRwyBs","authDomain":"code-bro-fd429.firebaseapp.com","messagingSenderId":"773406357843"}
+[info] 
+   Thank you for trying our early preview of Next.js support on Firebase Hosting.
+   During the preview, support is best-effort and breaking changes can be expected. Proceed with caution.
+   The integration is known to work with Next.js version 12 - 14.0. You may encounter errors.
+
+   Documentation: https://firebase.google.com/docs/hosting/frameworks/nextjs
+   File a bug: https://github.com/firebase/firebase-tools/issues/new?template=bug_report.md
+   Submit a feature request: https://github.com/firebase/firebase-tools/issues/new?template=feature_request.md
+
+   We'd love to learn from you. Express your interest in helping us shape the future of Firebase Hosting: https://goo.gle/41enW5X
+
+[debug] [2024-04-22T00:32:55.306Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/code-bro-fd429/sites/code-bro-fd429 [none]
+[debug] [2024-04-22T00:32:56.345Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/code-bro-fd429/sites/code-bro-fd429 200
+[debug] [2024-04-22T00:32:56.346Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/code-bro-fd429/sites/code-bro-fd429 {"name":"projects/code-bro-fd429/sites/code-bro-fd429","defaultUrl":"https://code-bro-fd429.web.app","appId":"1:773406357843:web:a1674d4a657d073f9d49a6","type":"DEFAULT_SITE"}
+[info]    ▲ Next.js 14.1.4
+
+[info]    - Environments: .env.local
+
+
+[info]    Creating an optimized production build ...
+
+[info]  ⚠ Compiled with warnings
+
+
+[info] ./node_modules/scheduler/cjs/scheduler.production.min.js
+A Node.js API is used (setImmediate at line: 11) which is not supported in the Edge Runtime.
+Learn more: https://nextjs.org/docs/api-reference/edge-runtime
+
+Import trace for requested module:
+./node_modules/scheduler/cjs/scheduler.production.min.js
+./node_modules/scheduler/index.js
+./node_modules/react-dom/cjs/react-dom.production.min.js
+./node_modules/react-dom/index.js
+./node_modules/next/dist/esm/client/script.js
+./node_modules/next/dist/esm/shared/lib/router/router.js
+./node_modules/next/dist/esm/client/router.js
+./node_modules/next/dist/esm/api/router.js
+./node_modules/@clerk/nextjs/dist/esm/pages/ClerkProvider.js
+./node_modules/@clerk/nextjs/dist/esm/client-boundary/ClerkProvider.js
+./node_modules/@clerk/nextjs/dist/esm/components.client.js
+./node_modules/@clerk/nextjs/dist/esm/index.js
+
+./node_modules/scheduler/cjs/scheduler.production.min.js
+A Node.js API is used (setImmediate at line: 11) which is not supported in the Edge Runtime.
+Learn more: https://nextjs.org/docs/api-reference/edge-runtime
+
+Import trace for requested module:
+./node_modules/scheduler/cjs/scheduler.production.min.js
+./node_modules/scheduler/index.js
+./node_modules/react-dom/cjs/react-dom.production.min.js
+./node_modules/react-dom/index.js
+./node_modules/next/dist/esm/client/script.js
+./node_modules/next/dist/esm/shared/lib/router/router.js
+./node_modules/next/dist/esm/client/router.js
+./node_modules/next/dist/esm/api/router.js
+./node_modules/@clerk/nextjs/dist/esm/pages/ClerkProvider.js
+./node_modules/@clerk/nextjs/dist/esm/client-boundary/ClerkProvider.js
+./node_modules/@clerk/nextjs/dist/esm/components.client.js
+./node_modules/@clerk/nextjs/dist/esm/index.js
+
+./node_modules/scheduler/cjs/scheduler.production.min.js
+A Node.js API is used (MessageChannel at line: 14) which is not supported in the Edge Runtime.
+Learn more: https://nextjs.org/docs/api-reference/edge-runtime
+
+Import trace for requested module:
+./node_modules/scheduler/cjs/scheduler.production.min.js
+./node_modules/scheduler/index.js
+./node_modules/react-dom/cjs/react-dom.production.min.js
+./node_modules/react-dom/index.js
+./node_modules/next/dist/esm/client/script.js
+./node_modules/next/dist/esm/shared/lib/router/router.js
+./node_modules/next/dist/esm/client/router.js
+./node_modules/next/dist/esm/api/router.js
+./node_modules/@clerk/nextjs/dist/esm/pages/ClerkProvider.js
+./node_modules/@clerk/nextjs/dist/esm/client-boundary/ClerkProvider.js
+./node_modules/@clerk/nextjs/dist/esm/components.client.js
+./node_modules/@clerk/nextjs/dist/esm/index.js
+
+./node_modules/scheduler/cjs/scheduler.production.min.js
+A Node.js API is used (MessageChannel at line: 14) which is not supported in the Edge Runtime.
+Learn more: https://nextjs.org/docs/api-reference/edge-runtime
+
+Import trace for requested module:
+./node_modules/scheduler/cjs/scheduler.production.min.js
+./node_modules/scheduler/index.js
+./node_modules/react-dom/cjs/react-dom.production.min.js
+./node_modules/react-dom/index.js
+./node_modules/next/dist/esm/client/script.js
+./node_modules/next/dist/esm/shared/lib/router/router.js
+./node_modules/next/dist/esm/client/router.js
+./node_modules/next/dist/esm/api/router.js
+./node_modules/@clerk/nextjs/dist/esm/pages/ClerkProvider.js
+./node_modules/@clerk/nextjs/dist/esm/client-boundary/ClerkProvider.js
+./node_modules/@clerk/nextjs/dist/esm/components.client.js
+./node_modules/@clerk/nextjs/dist/esm/index.js
+
+./node_modules/@clerk/shared/dist/chunk-RSOCGYTF.mjs
+A Node.js API is used (MessageEvent at line: 28) which is not supported in the Edge Runtime.
+Learn more: https://nextjs.org/docs/api-reference/edge-runtime
+
+Import trace for requested module:
+./node_modules/@clerk/shared/dist/chunk-RSOCGYTF.mjs
+./node_modules/@clerk/shared/dist/index.mjs
+./node_modules/@clerk/clerk-react/dist/esm/components/uiComponents.js
+./node_modules/@clerk/clerk-react/dist/esm/components/index.js
+./node_modules/@clerk/clerk-react/dist/esm/index.js
+./node_modules/@clerk/nextjs/dist/esm/client-boundary/controlComponents.js
+./node_modules/@clerk/nextjs/dist/esm/index.js
+
+
+[info]  ✓ Compiled successfully
+
+[info]    Linting and checking validity of types ...
+
+[info]    Collecting page data ...
+
+[info]    Generating static pages (0/10) ...
+
+[info]    Generating static pages (2/10) 
+
+[info]    Generating static pages (4/10) 
+
+[info]    Generating static pages (7/10) 
+
+[info]  ⨯ useSearchParams() should be wrapped in a suspense boundary at page "/checkout". Read more: https://nextjs.org/docs/messages/missing-suspense-with-csr-bailout
+    at a (C:\Users\Beveky\Desktop\FINALProjects\coding-access-academy\.next\server\chunks\676.js:167:13940)
+    at m (C:\Users\Beveky\Desktop\FINALProjects\coding-access-academy\.next\server\chunks\676.js:167:27936)
+    at z (C:\Users\Beveky\Desktop\FINALProjects\coding-access-academy\.next\server\app\checkout\page.js:1:14698)
+    at nM (C:\Users\Beveky\Desktop\FINALProjects\coding-access-academy\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:47422)
+    at nL (C:\Users\Beveky\Desktop\FINALProjects\coding-access-academy\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:64677)
+    at nI (C:\Users\Beveky\Desktop\FINALProjects\coding-access-academy\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:46809)
+    at nM (C:\Users\Beveky\Desktop\FINALProjects\coding-access-academy\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:47573)
+    at nM (C:\Users\Beveky\Desktop\FINALProjects\coding-access-academy\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:61666)
+    at nL (C:\Users\Beveky\Desktop\FINALProjects\coding-access-academy\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:64677)
+    at nB (C:\Users\Beveky\Desktop\FINALProjects\coding-access-academy\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:67660)
+
+Error occurred prerendering page "/checkout". Read more: https://nextjs.org/docs/messages/prerender-error
+
+
+[info]  ✓ Generating static pages (10/10) 
+
+[info] 
+
+[info] > Export encountered errors on following paths:
+	/checkout/page: /checkout
+
+[debug] [2024-04-22T00:33:28.832Z] Error: ENOENT: no such file or directory, open 'C:\Users\Beveky\Desktop\FINALProjects\coding-access-academy\.next\export-marker.json'
+[error] 
+[error] Error: An unexpected error has occurred.

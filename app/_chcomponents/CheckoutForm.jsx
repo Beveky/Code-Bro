@@ -6,9 +6,9 @@ import {
   useElements,
 } from "@stripe/react-stripe-js";
 import { useContext, useState } from "react";
-import OrdersApis from "../../_utils/OrderApis";
-import { CartContext } from "../../_context/CartContext";
-import CartApis from "../../_utils/CartApis";
+import OrdersApis from "../_utils/OrderApis";
+import { CartContext } from "../_context/CartContext";
+import CartApis from "../_utils/CartApis";
 
 const CheckoutForm = ({ amount }) => {
   const { cart, setCart } = useContext(CartContext);

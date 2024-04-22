@@ -2,7 +2,7 @@
 import React, { Suspense } from "react";
 import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
-import CheckoutForm from "./_components/CheckoutForm";
+import CheckoutForm from "../_chcomponents/CheckoutForm";
 import { useSearchParams } from "next/navigation";
 
 export default function checkout() {

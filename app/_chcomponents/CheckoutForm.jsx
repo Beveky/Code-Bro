@@ -17,10 +17,14 @@ const CheckoutForm = ({ amount }) => {
   const elements = useElements();
   const [loading, setLoading] = useState(false);
   const [errormessage, setErrorMessage] = useState();
+  const [submitting, setSubmitting] = useState(false);
   const handleSubmit = async (event) => {
     // We don't want to let default form submission happen here,
     // which would refresh the page.
     event.preventDefault();
+
+    if (submitting) return; // If already submitting, do nothing
+    setSubmitting(true); // Set submitting state to true
 
     if (!stripe || !elements) {
       // Stripe.js hasn't yet loaded.
@@ -104,7 +108,7 @@ const CheckoutForm = ({ amount }) => {
       <div className="mx-32 md:mx-[320px] mt-12">
         <PaymentElement />
         <button className="p-2 text-white bg-hover rounded-md w-full mt-4">
-          Submit
+          {submitting ? "Submitting..." : "Submit"}
         </button>
       </div>
     </form>

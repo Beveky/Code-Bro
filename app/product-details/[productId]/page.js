@@ -21,7 +21,7 @@ export default function ProductDetails({ params }) {
 
   const getProductById_ = () => {
     ProductApis.getProductById(params?.productId).then((res) => {
-      console.log("Product API Response:", res);
+      console.log("Product API Response:", res.data.data);
       setProductDetails(res.data.data);
       getProductByCategory(res.data.data);
     });

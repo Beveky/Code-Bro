@@ -15,13 +15,12 @@ export default function ProductDetails({ params }) {
   useEffect(() => {
     return () => {
       getProductById_();
-      console.log("Product Info:", productDetails);
     };
   }, [params?.productId]);
 
   const getProductById_ = () => {
     ProductApis.getProductById(params?.productId).then((res) => {
-      console.log("Product API Response:", res.data.data);
+      console.log("product item", res.data.data);
       setProductDetails(res.data.data);
       getProductByCategory(res.data.data);
     });
@@ -30,6 +29,7 @@ export default function ProductDetails({ params }) {
   const getProductByCategory = (product) => {
     ProductApis.getProductByCategory(product?.attributes?.category).then(
       (res) => {
+        console.log(res?.data?.data);
         setProductList(res?.data?.data);
       }
     );

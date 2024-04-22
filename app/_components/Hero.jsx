@@ -1,12 +1,28 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import React from "react";
+import React, { useEffect, useState } from "react";
+import Popup from "./Popup";
 
 export default function Hero() {
+  const [showPopup, setShowPopup] = useState(false);
+
+  useEffect(() => {
+    const popupShown = localStorage.getItem("popupShown");
+    if (!popupShown) {
+      setShowPopup(true);
+    }
+  }, []); // Run once on component mount to check if popup has been shown
+
+  const closePopup = () => {
+    setShowPopup(false);
+    localStorage.setItem("popupShown", "true"); // Save in localStorage
+  };
+
   const router = useRouter();
   return (
     <section className="bg-gray-50 ">
+      {showPopup && <Popup onClose={closePopup} />}
       <div className="mx-auto max-w-screen-xl px-4 py-32 lg:flex lg:h-screen lg:items-center select-none">
         <div className="mx-auto max-w-xl text-center">
           <h1 className="text-7xl font-extrabold sm:text-7xl ">

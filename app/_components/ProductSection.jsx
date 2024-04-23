@@ -11,7 +11,6 @@ export default function ProductSection() {
   }, []);
   const getLatestProducts_ = () => {
     ProductApis.getLatestProducts().then((res) => {
-      console.log("myproduct", res.data.data);
       setProductList(res.data.data);
     });
   };

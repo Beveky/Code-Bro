@@ -26,7 +26,6 @@ export default function ProductInfo({ product }) {
 
       CartApis.addToCart(data)
         .then((res) => {
-          console.log("cart created succefully");
           setCart((oldCart) => [
             ...oldCart,
             {
@@ -35,9 +34,7 @@ export default function ProductInfo({ product }) {
             },
           ]);
         })
-        .catch((error) => {
-          console.log("error"), error;
-        });
+        .catch((error) => {});
     }
   };
   return (

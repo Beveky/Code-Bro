@@ -3,7 +3,6 @@ import React from "react";
 import { List } from "lucide-react";
 import Link from "next/link";
 export default function ProductItem({ product }) {
-  console.log("this is", product);
   return (
     <Link
       href={`/product-details/${product?.id}`}

@@ -17,7 +17,9 @@ export default function cart() {
             oldCart.filter((item) => item.id !== res?.data?.data?.id)
           );
       })
-      .catch((error) => 
+      .catch((error) => {
+        console.log("error", error);
+      });
   };
 
   const getTotalAmount = () => {

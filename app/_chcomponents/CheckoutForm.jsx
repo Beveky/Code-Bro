@@ -56,7 +56,7 @@ const CheckoutForm = ({ amount }) => {
       clientSecret,
       elements,
       confirmParams: {
-        return_url: "https://codebro-backend.onrender.com/payment-confirm",
+        return_url: "https://code-bro-one.vercel.app/payment-confirm",
       },
     });
 
